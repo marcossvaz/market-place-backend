@@ -1,6 +1,6 @@
 import { userRepositoryFactory } from "../factories/userRepositoryFactory.js";
 import type { User } from "../model/Users.js";
-import { hashCodeCreate } from "./helpers/hashCode.js";
+import { hashCodeCreate } from "./helpers/bcryptHelpers.js";
 import { createJWT } from "./helpers/jwtHelpers.js";
 
 export class UserServices {
