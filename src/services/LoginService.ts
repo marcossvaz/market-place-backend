@@ -1,5 +1,6 @@
 import type { UserRepository } from "../repository/UserRepository.js";
-import { comparePassword } from "./helpers/bcryptHelpers.js";
+import { comparePassword, hashCodeCreate } from "./helpers/bcryptHelpers.js";
+import { createJWT } from "./helpers/jwtHelpers.js";
 
 interface ILogin  {
     email: string;
@@ -21,8 +22,11 @@ export class LoginService {
 
        dataClient.password = '';
 
+       const token = createJWT(dataClient);
+
        return {
-        dataClient
+        dataClient,
+        token
        }
     }
 }

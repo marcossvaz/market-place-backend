@@ -29,7 +29,40 @@ model User {
   complement String?
 
   active Boolean @default(true)
+
+  
  
+  created_at DateTime? @default(now())
+  updated_at DateTime? @updatedAt
+}
+
+model Product {
+  id String @id @default(uuid())
+
+  name String
+  description String?
+  photo String?
+  active Boolean @default(true)
+
+  size ProductSize[]
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @updatedAt
+}
+
+model ProductSize {
+  id String @id @default(uuid())
+
+  id_product String
+  product Product @relation(fields: [id_product], references: [id])
+
+  name String
+  quantity_stock Float
+  price_of Float
+  price_for Float
+  active Boolean
+  main Boolean
+
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
 }
