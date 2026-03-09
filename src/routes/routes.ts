@@ -20,3 +20,5 @@ routes.post('/login', loginRouteController.execute);
 
 // routes of product ------------------------
 routes.post('/products', productRouteController.create);
+routes.get('/products', productRouteController.getAll);
+routes.get('/products/:id', productRouteController.getById);
