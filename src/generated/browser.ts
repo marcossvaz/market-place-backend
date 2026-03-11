@@ -32,3 +32,13 @@ export type Product = Prisma.ProductModel
  * 
  */
 export type ProductSize = Prisma.ProductSizeModel
+/**
+ * Model Cart
+ * 
+ */
+export type Cart = Prisma.CartModel
+/**
+ * Model ProductCart
+ * 
+ */
+export type ProductCart = Prisma.ProductCartModel

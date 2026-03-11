@@ -13,6 +13,7 @@ datasource db {
   provider = "postgresql"
 }
 
+
 model User {
   id String @id @default(uuid())
 
@@ -36,6 +37,7 @@ model User {
   updated_at DateTime? @updatedAt
 }
 
+
 model Product {
   id String @id @default(uuid())
 
@@ -45,10 +47,12 @@ model Product {
   active Boolean @default(true)
 
   size ProductSize[]
+  productCart ProductCart[] // get productCart
 
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
 }
+
 
 model ProductSize {
   id String @id @default(uuid())
@@ -63,6 +67,42 @@ model ProductSize {
   active Boolean
   main Boolean
 
+  productCart ProductCart[]
+
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
+}
+
+
+model Cart {
+  id String @id @default(uuid())
+
+  id_client String?
+  id_visitors String?
+  active Boolean @default(true)
+
+  cart ProductCart[]
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @updatedAt
+}
+
+
+model ProductCart {
+  id String @id @default(uuid())
+
+  id_cart String  
+  cart Cart @relation(fields: [id_cart], references: [id])
+
+  id_product String
+  product Product @relation(fields: [id_product], references: [id])
+
+  id_size String
+  productSize ProductSize @relation(fields: [id_size], references: [id])
+
+  quantity Float
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @updatedAt
+
 }
