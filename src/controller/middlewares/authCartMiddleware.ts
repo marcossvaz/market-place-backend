@@ -12,7 +12,7 @@ export class AuthCartMiddleware {
 
                 const dataUser: any = validateJwt(token[1] as string);
 
-                (req as any).ud_user = dataUser.id;
+                (req as any).id_user = dataUser.id;
 
                 next();
                 return;

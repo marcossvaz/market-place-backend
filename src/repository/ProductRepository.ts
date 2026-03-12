@@ -5,7 +5,18 @@ export class ProductRepository {
     
     async create(data: Product) {
         return await prismaInstanceFactory.product.create({
-            data: data
+            data: {
+                name: data.name,
+                description: data.description ?? null,
+                photo: data.photo ?? null,
+                size: {
+                    createMany: {
+                        data: data.size ?? []
+                    }
+                }
+            },
+            include: {size: true}
+            
         });
     }
 

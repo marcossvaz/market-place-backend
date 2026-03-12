@@ -1,13 +1,13 @@
-interface ProductSize {
+export interface ProductSize {
     id?: string;
-    id_product: string;
+    id_product?: string;
     name: string;
     quantity_stock: number;
     price_of: number;
-    prive_for: number;
+    price_for: number;
     active: boolean;
     main: boolean;
 
-    created_at: any;
-    updated_at: any;
+    created_at?: Date | null;
+    updated_at?: any | null;
 }

@@ -1,11 +1,11 @@
 import type { Request, Response } from "express";
-import { productSchema } from "./schemas/ProductSchema.js";
+import { productSchema, type IProduct } from "./schemas/ProductSchema.js";
 import { ProductServiceFactory } from "../factories/productServiceFactory.js";
 
 export class ProductController {
     async create(req: Request, res: Response){
         try {
-            const body = productSchema.parse(req.body);
+            const body: IProduct = productSchema.parse(req.body);
 
             const result = await ProductServiceFactory.create(body);
 

@@ -48,5 +48,30 @@ export class CartService {
                 dataCreateCart
             )
         }
+
+        const getProductInCart = await this.productCartRepository.getbyIdCart(
+            data.id_product, 
+            data.id_size
+        );
+
+        // create a cart of product if not exist OR uptade product of cart ----> ProductCartRepository
+        if(!getProductInCart) {
+            await this.productCartRepository.add({
+                id_cart: dataCart.id as string,
+                id_size: data.id_size,
+                id_product: data.id_product,
+                quantity: data.quantity
+            });
+        } else {
+            const newQuantity = getProductInCart.quantity + Number(data.quantity);
+            const presentQuantity = getProductInCart.productSize.quantity_stock;
+
+            // varify a quantity of product in stock
+            if(newQuantity > presentQuantity) {
+                throw new Error(`Existe apenas ${presentQuantity}, desse produto`);
+            }
+
+            await this.productCartRepository.updateCart(getProductInCart.id as string,{quantity: newQuantity} as any);
+        }
     };
 }
