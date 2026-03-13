@@ -8,6 +8,14 @@ export class CartRepository {
             where: {
                 id: idUser,
                 active: true
+            },
+            include: {
+                cart: {
+                    include: {
+                        product: true,
+                        productSize: true
+                    }
+                }
             }
         })
     }

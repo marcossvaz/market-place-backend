@@ -29,5 +29,6 @@ routes.get('/products', productRouteController.getAll);
 routes.get('/products/:id', productRouteController.getById);
 
 
-// routes of cart ---------------------------
-routes.post('/products', authCartMiddleware.cart, cartRoutesControlelr.add);
+// routes of cart --------------------------- (Interection client)
+routes.post('/products/cart', authCartMiddleware.cart, cartRoutesControlelr.add);
+routes.get('/cart', authCartMiddleware.cart, cartRoutesControlelr.get);
