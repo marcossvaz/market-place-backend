@@ -4,6 +4,7 @@ import { LoginController } from "../controller/LoginController.js";
 import { ProductController } from "../controller/ProductController.js";
 import { AuthCartMiddleware } from "../controller/middlewares/authCartMiddleware.js";
 import { CartController } from "../controller/CartController.js";
+import { ShippingController } from "../controller/ShippingController.js";
 
 
 export const routes = Router();
@@ -13,7 +14,7 @@ const loginRouteController = new LoginController();
 const productRouteController = new ProductController();
 const authCartMiddleware = new AuthCartMiddleware();
 const cartRoutesControlelr = new CartController();
-
+const shippingController = new ShippingController(); 
 
 // routes of user ---------------------------
 routes.post('/users', userRouteController.create);
@@ -32,3 +33,7 @@ routes.get('/products/:id', productRouteController.getById);
 // routes of cart --------------------------- (Interection client)
 routes.post('/products/cart', authCartMiddleware.cart, cartRoutesControlelr.add);
 routes.get('/cart', authCartMiddleware.cart, cartRoutesControlelr.get);
+
+
+// routes of shippings ----------------------
+routes.post('/shipping-calculate', shippingController.calculate) 
