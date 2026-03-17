@@ -59,6 +59,12 @@ model ProductSize {
 
   id_product String
   product Product @relation(fields: [id_product], references: [id])
+  width Float 
+  height Float 
+  length Float 
+  weight Float 
+  quantity Float 
+  insurance_value Float 
 
   name String
   quantity_stock Float
@@ -66,6 +72,7 @@ model ProductSize {
   price_for Float
   active Boolean
   main Boolean
+
 
   productCart ProductCart[]
 

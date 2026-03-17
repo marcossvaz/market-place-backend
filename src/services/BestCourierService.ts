@@ -1,13 +1,50 @@
 // that is my main courier service, my model pattern
 
 import axios from "axios";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export class BestCourierService {
-    async calculate() {
+
+    async calculate(cep: string, dataCart: any) {
+        
+        let ProductCartRepository = [];
+
+        if(dataCart) {
+            ProductCartRepository.push(...dataCart);
+        }
+
+        if(dataCart) {
+            ProductCartRepository.push(...dataCart);
+        }
+
+
+
+
+
+        const dataPayloadCalculateShipping = () => {
+            const data: any =[];
+
+            ProductCartRepository.map((product: any) => {
+                data.push({
+                    id: product.id,
+                    width: product.size.width,
+                    height: product.size.height,
+                    lenght: product.size.lenght,
+                    weight: product.size.weight,
+                    quantity: product.size.quantity,
+                    insurance_value: product.size.insurance_value
+                })
+            })
+
+            return data;
+        };
+
         const result = await axios.post('https://melhorenvio.com.br/api/v2/me/shipment/calculate', {
 
             "from": {
-                "postal_code": "96020360"
+                "postal_code": process.env.CEP_ORIGEM
             },
             "to": {
                 "postal_code": "01018020"
@@ -49,7 +86,7 @@ export class BestCourierService {
 
         const pac = result.data.find((item: any) => item.name === 'PAC');
 
-        
+
         if(pac) {
             returns.pac = {
                 price: parseFloat(pac.price),

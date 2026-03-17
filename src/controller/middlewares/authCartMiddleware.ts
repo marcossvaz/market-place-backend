@@ -1,7 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 import { validateJwt } from "../../services/helpers/jwtHelpers.js";
 
-export class AuthCartMiddleware {
+export class authCartMiddlewareAuthCartMiddleware {
 
     async cart(req: Request, res: Response, next: NextFunction) {
 
@@ -11,9 +11,9 @@ export class AuthCartMiddleware {
                 const token = req.headers.authorization?.split(' ');
 
                 const dataUser: any = validateJwt(token[1] as string);
-
+                
                 (req as any).id_user = dataUser.id;
-
+                console.log('data: ', dataUser);
                 next();
                 return;
             }

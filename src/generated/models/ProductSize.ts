@@ -27,12 +27,24 @@ export type AggregateProductSize = {
 }
 
 export type ProductSizeAvgAggregateOutputType = {
+  width: number | null
+  height: number | null
+  length: number | null
+  weight: number | null
+  quantity: number | null
+  insurance_value: number | null
   quantity_stock: number | null
   price_of: number | null
   price_for: number | null
 }
 
 export type ProductSizeSumAggregateOutputType = {
+  width: number | null
+  height: number | null
+  length: number | null
+  weight: number | null
+  quantity: number | null
+  insurance_value: number | null
   quantity_stock: number | null
   price_of: number | null
   price_for: number | null
@@ -41,6 +53,12 @@ export type ProductSizeSumAggregateOutputType = {
 export type ProductSizeMinAggregateOutputType = {
   id: string | null
   id_product: string | null
+  width: number | null
+  height: number | null
+  length: number | null
+  weight: number | null
+  quantity: number | null
+  insurance_value: number | null
   name: string | null
   quantity_stock: number | null
   price_of: number | null
@@ -54,6 +72,12 @@ export type ProductSizeMinAggregateOutputType = {
 export type ProductSizeMaxAggregateOutputType = {
   id: string | null
   id_product: string | null
+  width: number | null
+  height: number | null
+  length: number | null
+  weight: number | null
+  quantity: number | null
+  insurance_value: number | null
   name: string | null
   quantity_stock: number | null
   price_of: number | null
@@ -67,6 +91,12 @@ export type ProductSizeMaxAggregateOutputType = {
 export type ProductSizeCountAggregateOutputType = {
   id: number
   id_product: number
+  width: number
+  height: number
+  length: number
+  weight: number
+  quantity: number
+  insurance_value: number
   name: number
   quantity_stock: number
   price_of: number
@@ -80,12 +110,24 @@ export type ProductSizeCountAggregateOutputType = {
 
 
 export type ProductSizeAvgAggregateInputType = {
+  width?: true
+  height?: true
+  length?: true
+  weight?: true
+  quantity?: true
+  insurance_value?: true
   quantity_stock?: true
   price_of?: true
   price_for?: true
 }
 
 export type ProductSizeSumAggregateInputType = {
+  width?: true
+  height?: true
+  length?: true
+  weight?: true
+  quantity?: true
+  insurance_value?: true
   quantity_stock?: true
   price_of?: true
   price_for?: true
@@ -94,6 +136,12 @@ export type ProductSizeSumAggregateInputType = {
 export type ProductSizeMinAggregateInputType = {
   id?: true
   id_product?: true
+  width?: true
+  height?: true
+  length?: true
+  weight?: true
+  quantity?: true
+  insurance_value?: true
   name?: true
   quantity_stock?: true
   price_of?: true
@@ -107,6 +155,12 @@ export type ProductSizeMinAggregateInputType = {
 export type ProductSizeMaxAggregateInputType = {
   id?: true
   id_product?: true
+  width?: true
+  height?: true
+  length?: true
+  weight?: true
+  quantity?: true
+  insurance_value?: true
   name?: true
   quantity_stock?: true
   price_of?: true
@@ -120,6 +174,12 @@ export type ProductSizeMaxAggregateInputType = {
 export type ProductSizeCountAggregateInputType = {
   id?: true
   id_product?: true
+  width?: true
+  height?: true
+  length?: true
+  weight?: true
+  quantity?: true
+  insurance_value?: true
   name?: true
   quantity_stock?: true
   price_of?: true
@@ -220,6 +280,12 @@ export type ProductSizeGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inte
 export type ProductSizeGroupByOutputType = {
   id: string
   id_product: string
+  width: number
+  height: number
+  length: number
+  weight: number
+  quantity: number
+  insurance_value: number
   name: string
   quantity_stock: number
   price_of: number
@@ -256,6 +322,12 @@ export type ProductSizeWhereInput = {
   NOT?: Prisma.ProductSizeWhereInput | Prisma.ProductSizeWhereInput[]
   id?: Prisma.StringFilter<"ProductSize"> | string
   id_product?: Prisma.StringFilter<"ProductSize"> | string
+  width?: Prisma.FloatFilter<"ProductSize"> | number
+  height?: Prisma.FloatFilter<"ProductSize"> | number
+  length?: Prisma.FloatFilter<"ProductSize"> | number
+  weight?: Prisma.FloatFilter<"ProductSize"> | number
+  quantity?: Prisma.FloatFilter<"ProductSize"> | number
+  insurance_value?: Prisma.FloatFilter<"ProductSize"> | number
   name?: Prisma.StringFilter<"ProductSize"> | string
   quantity_stock?: Prisma.FloatFilter<"ProductSize"> | number
   price_of?: Prisma.FloatFilter<"ProductSize"> | number
@@ -271,6 +343,12 @@ export type ProductSizeWhereInput = {
 export type ProductSizeOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   id_product?: Prisma.SortOrder
+  width?: Prisma.SortOrder
+  height?: Prisma.SortOrder
+  length?: Prisma.SortOrder
+  weight?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  insurance_value?: Prisma.SortOrder
   name?: Prisma.SortOrder
   quantity_stock?: Prisma.SortOrder
   price_of?: Prisma.SortOrder
@@ -289,6 +367,12 @@ export type ProductSizeWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.ProductSizeWhereInput[]
   NOT?: Prisma.ProductSizeWhereInput | Prisma.ProductSizeWhereInput[]
   id_product?: Prisma.StringFilter<"ProductSize"> | string
+  width?: Prisma.FloatFilter<"ProductSize"> | number
+  height?: Prisma.FloatFilter<"ProductSize"> | number
+  length?: Prisma.FloatFilter<"ProductSize"> | number
+  weight?: Prisma.FloatFilter<"ProductSize"> | number
+  quantity?: Prisma.FloatFilter<"ProductSize"> | number
+  insurance_value?: Prisma.FloatFilter<"ProductSize"> | number
   name?: Prisma.StringFilter<"ProductSize"> | string
   quantity_stock?: Prisma.FloatFilter<"ProductSize"> | number
   price_of?: Prisma.FloatFilter<"ProductSize"> | number
@@ -304,6 +388,12 @@ export type ProductSizeWhereUniqueInput = Prisma.AtLeast<{
 export type ProductSizeOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   id_product?: Prisma.SortOrder
+  width?: Prisma.SortOrder
+  height?: Prisma.SortOrder
+  length?: Prisma.SortOrder
+  weight?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  insurance_value?: Prisma.SortOrder
   name?: Prisma.SortOrder
   quantity_stock?: Prisma.SortOrder
   price_of?: Prisma.SortOrder
@@ -325,6 +415,12 @@ export type ProductSizeScalarWhereWithAggregatesInput = {
   NOT?: Prisma.ProductSizeScalarWhereWithAggregatesInput | Prisma.ProductSizeScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"ProductSize"> | string
   id_product?: Prisma.StringWithAggregatesFilter<"ProductSize"> | string
+  width?: Prisma.FloatWithAggregatesFilter<"ProductSize"> | number
+  height?: Prisma.FloatWithAggregatesFilter<"ProductSize"> | number
+  length?: Prisma.FloatWithAggregatesFilter<"ProductSize"> | number
+  weight?: Prisma.FloatWithAggregatesFilter<"ProductSize"> | number
+  quantity?: Prisma.FloatWithAggregatesFilter<"ProductSize"> | number
+  insurance_value?: Prisma.FloatWithAggregatesFilter<"ProductSize"> | number
   name?: Prisma.StringWithAggregatesFilter<"ProductSize"> | string
   quantity_stock?: Prisma.FloatWithAggregatesFilter<"ProductSize"> | number
   price_of?: Prisma.FloatWithAggregatesFilter<"ProductSize"> | number
@@ -337,6 +433,12 @@ export type ProductSizeScalarWhereWithAggregatesInput = {
 
 export type ProductSizeCreateInput = {
   id?: string
+  width: number
+  height: number
+  length: number
+  weight: number
+  quantity: number
+  insurance_value: number
   name: string
   quantity_stock: number
   price_of: number
@@ -352,6 +454,12 @@ export type ProductSizeCreateInput = {
 export type ProductSizeUncheckedCreateInput = {
   id?: string
   id_product: string
+  width: number
+  height: number
+  length: number
+  weight: number
+  quantity: number
+  insurance_value: number
   name: string
   quantity_stock: number
   price_of: number
@@ -365,6 +473,12 @@ export type ProductSizeUncheckedCreateInput = {
 
 export type ProductSizeUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  width?: Prisma.FloatFieldUpdateOperationsInput | number
+  height?: Prisma.FloatFieldUpdateOperationsInput | number
+  length?: Prisma.FloatFieldUpdateOperationsInput | number
+  weight?: Prisma.FloatFieldUpdateOperationsInput | number
+  quantity?: Prisma.FloatFieldUpdateOperationsInput | number
+  insurance_value?: Prisma.FloatFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_stock?: Prisma.FloatFieldUpdateOperationsInput | number
   price_of?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -380,6 +494,12 @@ export type ProductSizeUpdateInput = {
 export type ProductSizeUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   id_product?: Prisma.StringFieldUpdateOperationsInput | string
+  width?: Prisma.FloatFieldUpdateOperationsInput | number
+  height?: Prisma.FloatFieldUpdateOperationsInput | number
+  length?: Prisma.FloatFieldUpdateOperationsInput | number
+  weight?: Prisma.FloatFieldUpdateOperationsInput | number
+  quantity?: Prisma.FloatFieldUpdateOperationsInput | number
+  insurance_value?: Prisma.FloatFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_stock?: Prisma.FloatFieldUpdateOperationsInput | number
   price_of?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -394,6 +514,12 @@ export type ProductSizeUncheckedUpdateInput = {
 export type ProductSizeCreateManyInput = {
   id?: string
   id_product: string
+  width: number
+  height: number
+  length: number
+  weight: number
+  quantity: number
+  insurance_value: number
   name: string
   quantity_stock: number
   price_of: number
@@ -406,6 +532,12 @@ export type ProductSizeCreateManyInput = {
 
 export type ProductSizeUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  width?: Prisma.FloatFieldUpdateOperationsInput | number
+  height?: Prisma.FloatFieldUpdateOperationsInput | number
+  length?: Prisma.FloatFieldUpdateOperationsInput | number
+  weight?: Prisma.FloatFieldUpdateOperationsInput | number
+  quantity?: Prisma.FloatFieldUpdateOperationsInput | number
+  insurance_value?: Prisma.FloatFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_stock?: Prisma.FloatFieldUpdateOperationsInput | number
   price_of?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -419,6 +551,12 @@ export type ProductSizeUpdateManyMutationInput = {
 export type ProductSizeUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   id_product?: Prisma.StringFieldUpdateOperationsInput | string
+  width?: Prisma.FloatFieldUpdateOperationsInput | number
+  height?: Prisma.FloatFieldUpdateOperationsInput | number
+  length?: Prisma.FloatFieldUpdateOperationsInput | number
+  weight?: Prisma.FloatFieldUpdateOperationsInput | number
+  quantity?: Prisma.FloatFieldUpdateOperationsInput | number
+  insurance_value?: Prisma.FloatFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_stock?: Prisma.FloatFieldUpdateOperationsInput | number
   price_of?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -442,6 +580,12 @@ export type ProductSizeOrderByRelationAggregateInput = {
 export type ProductSizeCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_product?: Prisma.SortOrder
+  width?: Prisma.SortOrder
+  height?: Prisma.SortOrder
+  length?: Prisma.SortOrder
+  weight?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  insurance_value?: Prisma.SortOrder
   name?: Prisma.SortOrder
   quantity_stock?: Prisma.SortOrder
   price_of?: Prisma.SortOrder
@@ -453,6 +597,12 @@ export type ProductSizeCountOrderByAggregateInput = {
 }
 
 export type ProductSizeAvgOrderByAggregateInput = {
+  width?: Prisma.SortOrder
+  height?: Prisma.SortOrder
+  length?: Prisma.SortOrder
+  weight?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  insurance_value?: Prisma.SortOrder
   quantity_stock?: Prisma.SortOrder
   price_of?: Prisma.SortOrder
   price_for?: Prisma.SortOrder
@@ -461,6 +611,12 @@ export type ProductSizeAvgOrderByAggregateInput = {
 export type ProductSizeMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_product?: Prisma.SortOrder
+  width?: Prisma.SortOrder
+  height?: Prisma.SortOrder
+  length?: Prisma.SortOrder
+  weight?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  insurance_value?: Prisma.SortOrder
   name?: Prisma.SortOrder
   quantity_stock?: Prisma.SortOrder
   price_of?: Prisma.SortOrder
@@ -474,6 +630,12 @@ export type ProductSizeMaxOrderByAggregateInput = {
 export type ProductSizeMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_product?: Prisma.SortOrder
+  width?: Prisma.SortOrder
+  height?: Prisma.SortOrder
+  length?: Prisma.SortOrder
+  weight?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  insurance_value?: Prisma.SortOrder
   name?: Prisma.SortOrder
   quantity_stock?: Prisma.SortOrder
   price_of?: Prisma.SortOrder
@@ -485,6 +647,12 @@ export type ProductSizeMinOrderByAggregateInput = {
 }
 
 export type ProductSizeSumOrderByAggregateInput = {
+  width?: Prisma.SortOrder
+  height?: Prisma.SortOrder
+  length?: Prisma.SortOrder
+  weight?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  insurance_value?: Prisma.SortOrder
   quantity_stock?: Prisma.SortOrder
   price_of?: Prisma.SortOrder
   price_for?: Prisma.SortOrder
@@ -561,6 +729,12 @@ export type ProductSizeUpdateOneRequiredWithoutProductCartNestedInput = {
 
 export type ProductSizeCreateWithoutProductInput = {
   id?: string
+  width: number
+  height: number
+  length: number
+  weight: number
+  quantity: number
+  insurance_value: number
   name: string
   quantity_stock: number
   price_of: number
@@ -574,6 +748,12 @@ export type ProductSizeCreateWithoutProductInput = {
 
 export type ProductSizeUncheckedCreateWithoutProductInput = {
   id?: string
+  width: number
+  height: number
+  length: number
+  weight: number
+  quantity: number
+  insurance_value: number
   name: string
   quantity_stock: number
   price_of: number
@@ -617,6 +797,12 @@ export type ProductSizeScalarWhereInput = {
   NOT?: Prisma.ProductSizeScalarWhereInput | Prisma.ProductSizeScalarWhereInput[]
   id?: Prisma.StringFilter<"ProductSize"> | string
   id_product?: Prisma.StringFilter<"ProductSize"> | string
+  width?: Prisma.FloatFilter<"ProductSize"> | number
+  height?: Prisma.FloatFilter<"ProductSize"> | number
+  length?: Prisma.FloatFilter<"ProductSize"> | number
+  weight?: Prisma.FloatFilter<"ProductSize"> | number
+  quantity?: Prisma.FloatFilter<"ProductSize"> | number
+  insurance_value?: Prisma.FloatFilter<"ProductSize"> | number
   name?: Prisma.StringFilter<"ProductSize"> | string
   quantity_stock?: Prisma.FloatFilter<"ProductSize"> | number
   price_of?: Prisma.FloatFilter<"ProductSize"> | number
@@ -629,6 +815,12 @@ export type ProductSizeScalarWhereInput = {
 
 export type ProductSizeCreateWithoutProductCartInput = {
   id?: string
+  width: number
+  height: number
+  length: number
+  weight: number
+  quantity: number
+  insurance_value: number
   name: string
   quantity_stock: number
   price_of: number
@@ -643,6 +835,12 @@ export type ProductSizeCreateWithoutProductCartInput = {
 export type ProductSizeUncheckedCreateWithoutProductCartInput = {
   id?: string
   id_product: string
+  width: number
+  height: number
+  length: number
+  weight: number
+  quantity: number
+  insurance_value: number
   name: string
   quantity_stock: number
   price_of: number
@@ -671,6 +869,12 @@ export type ProductSizeUpdateToOneWithWhereWithoutProductCartInput = {
 
 export type ProductSizeUpdateWithoutProductCartInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  width?: Prisma.FloatFieldUpdateOperationsInput | number
+  height?: Prisma.FloatFieldUpdateOperationsInput | number
+  length?: Prisma.FloatFieldUpdateOperationsInput | number
+  weight?: Prisma.FloatFieldUpdateOperationsInput | number
+  quantity?: Prisma.FloatFieldUpdateOperationsInput | number
+  insurance_value?: Prisma.FloatFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_stock?: Prisma.FloatFieldUpdateOperationsInput | number
   price_of?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -685,6 +889,12 @@ export type ProductSizeUpdateWithoutProductCartInput = {
 export type ProductSizeUncheckedUpdateWithoutProductCartInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   id_product?: Prisma.StringFieldUpdateOperationsInput | string
+  width?: Prisma.FloatFieldUpdateOperationsInput | number
+  height?: Prisma.FloatFieldUpdateOperationsInput | number
+  length?: Prisma.FloatFieldUpdateOperationsInput | number
+  weight?: Prisma.FloatFieldUpdateOperationsInput | number
+  quantity?: Prisma.FloatFieldUpdateOperationsInput | number
+  insurance_value?: Prisma.FloatFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_stock?: Prisma.FloatFieldUpdateOperationsInput | number
   price_of?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -697,6 +907,12 @@ export type ProductSizeUncheckedUpdateWithoutProductCartInput = {
 
 export type ProductSizeCreateManyProductInput = {
   id?: string
+  width: number
+  height: number
+  length: number
+  weight: number
+  quantity: number
+  insurance_value: number
   name: string
   quantity_stock: number
   price_of: number
@@ -709,6 +925,12 @@ export type ProductSizeCreateManyProductInput = {
 
 export type ProductSizeUpdateWithoutProductInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  width?: Prisma.FloatFieldUpdateOperationsInput | number
+  height?: Prisma.FloatFieldUpdateOperationsInput | number
+  length?: Prisma.FloatFieldUpdateOperationsInput | number
+  weight?: Prisma.FloatFieldUpdateOperationsInput | number
+  quantity?: Prisma.FloatFieldUpdateOperationsInput | number
+  insurance_value?: Prisma.FloatFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_stock?: Prisma.FloatFieldUpdateOperationsInput | number
   price_of?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -722,6 +944,12 @@ export type ProductSizeUpdateWithoutProductInput = {
 
 export type ProductSizeUncheckedUpdateWithoutProductInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  width?: Prisma.FloatFieldUpdateOperationsInput | number
+  height?: Prisma.FloatFieldUpdateOperationsInput | number
+  length?: Prisma.FloatFieldUpdateOperationsInput | number
+  weight?: Prisma.FloatFieldUpdateOperationsInput | number
+  quantity?: Prisma.FloatFieldUpdateOperationsInput | number
+  insurance_value?: Prisma.FloatFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_stock?: Prisma.FloatFieldUpdateOperationsInput | number
   price_of?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -735,6 +963,12 @@ export type ProductSizeUncheckedUpdateWithoutProductInput = {
 
 export type ProductSizeUncheckedUpdateManyWithoutProductInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  width?: Prisma.FloatFieldUpdateOperationsInput | number
+  height?: Prisma.FloatFieldUpdateOperationsInput | number
+  length?: Prisma.FloatFieldUpdateOperationsInput | number
+  weight?: Prisma.FloatFieldUpdateOperationsInput | number
+  quantity?: Prisma.FloatFieldUpdateOperationsInput | number
+  insurance_value?: Prisma.FloatFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_stock?: Prisma.FloatFieldUpdateOperationsInput | number
   price_of?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -779,6 +1013,12 @@ export type ProductSizeCountOutputTypeCountProductCartArgs<ExtArgs extends runti
 export type ProductSizeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_product?: boolean
+  width?: boolean
+  height?: boolean
+  length?: boolean
+  weight?: boolean
+  quantity?: boolean
+  insurance_value?: boolean
   name?: boolean
   quantity_stock?: boolean
   price_of?: boolean
@@ -795,6 +1035,12 @@ export type ProductSizeSelect<ExtArgs extends runtime.Types.Extensions.InternalA
 export type ProductSizeSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_product?: boolean
+  width?: boolean
+  height?: boolean
+  length?: boolean
+  weight?: boolean
+  quantity?: boolean
+  insurance_value?: boolean
   name?: boolean
   quantity_stock?: boolean
   price_of?: boolean
@@ -809,6 +1055,12 @@ export type ProductSizeSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
 export type ProductSizeSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_product?: boolean
+  width?: boolean
+  height?: boolean
+  length?: boolean
+  weight?: boolean
+  quantity?: boolean
+  insurance_value?: boolean
   name?: boolean
   quantity_stock?: boolean
   price_of?: boolean
@@ -823,6 +1075,12 @@ export type ProductSizeSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
 export type ProductSizeSelectScalar = {
   id?: boolean
   id_product?: boolean
+  width?: boolean
+  height?: boolean
+  length?: boolean
+  weight?: boolean
+  quantity?: boolean
+  insurance_value?: boolean
   name?: boolean
   quantity_stock?: boolean
   price_of?: boolean
@@ -833,7 +1091,7 @@ export type ProductSizeSelectScalar = {
   updated_at?: boolean
 }
 
-export type ProductSizeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_product" | "name" | "quantity_stock" | "price_of" | "price_for" | "active" | "main" | "created_at" | "updated_at", ExtArgs["result"]["productSize"]>
+export type ProductSizeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_product" | "width" | "height" | "length" | "weight" | "quantity" | "insurance_value" | "name" | "quantity_stock" | "price_of" | "price_for" | "active" | "main" | "created_at" | "updated_at", ExtArgs["result"]["productSize"]>
 export type ProductSizeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
   productCart?: boolean | Prisma.ProductSize$productCartArgs<ExtArgs>
@@ -855,6 +1113,12 @@ export type $ProductSizePayload<ExtArgs extends runtime.Types.Extensions.Interna
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     id_product: string
+    width: number
+    height: number
+    length: number
+    weight: number
+    quantity: number
+    insurance_value: number
     name: string
     quantity_stock: number
     price_of: number
@@ -1290,6 +1554,12 @@ export interface Prisma__ProductSizeClient<T, Null = never, ExtArgs extends runt
 export interface ProductSizeFieldRefs {
   readonly id: Prisma.FieldRef<"ProductSize", 'String'>
   readonly id_product: Prisma.FieldRef<"ProductSize", 'String'>
+  readonly width: Prisma.FieldRef<"ProductSize", 'Float'>
+  readonly height: Prisma.FieldRef<"ProductSize", 'Float'>
+  readonly length: Prisma.FieldRef<"ProductSize", 'Float'>
+  readonly weight: Prisma.FieldRef<"ProductSize", 'Float'>
+  readonly quantity: Prisma.FieldRef<"ProductSize", 'Float'>
+  readonly insurance_value: Prisma.FieldRef<"ProductSize", 'Float'>
   readonly name: Prisma.FieldRef<"ProductSize", 'String'>
   readonly quantity_stock: Prisma.FieldRef<"ProductSize", 'Float'>
   readonly price_of: Prisma.FieldRef<"ProductSize", 'Float'>

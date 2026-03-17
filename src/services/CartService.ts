@@ -21,6 +21,8 @@ export class CartService {
 
     async getByUser(typeUser: string, idClient: string) {
 
+        console.log("typeUer: ", typeUser, "idLCient: ", idClient);
+
         let dataCart = null;
 
         if(typeUser === 'cliente') {
@@ -35,7 +37,7 @@ export class CartService {
             throw new Error("Por favor, adiciona um produto para criar")
         }
 
-        
+        return dataCart;
     }
 
     async add(data: Icart, typeUser: string, id: string) {

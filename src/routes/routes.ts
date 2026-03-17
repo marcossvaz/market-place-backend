@@ -2,7 +2,7 @@ import { Router} from "express";
 import { UserController } from "../controller/UserController.js";
 import { LoginController } from "../controller/LoginController.js";
 import { ProductController } from "../controller/ProductController.js";
-import { AuthCartMiddleware } from "../controller/middlewares/authCartMiddleware.js";
+import { authCartMiddlewareAuthCartMiddleware } from "../controller/middlewares/authCartMiddleware.js";
 import { CartController } from "../controller/CartController.js";
 import { ShippingController } from "../controller/ShippingController.js";
 
@@ -12,7 +12,7 @@ export const routes = Router();
 const userRouteController = new UserController();
 const loginRouteController = new LoginController();
 const productRouteController = new ProductController();
-const authCartMiddleware = new AuthCartMiddleware();
+const authCartMiddleware = new authCartMiddlewareAuthCartMiddleware();
 const cartRoutesControlelr = new CartController();
 const shippingController = new ShippingController(); 
 
@@ -36,4 +36,4 @@ routes.get('/cart', authCartMiddleware.cart, cartRoutesControlelr.get);
 
 
 // routes of shippings ----------------------
-routes.post('/shipping-calculate', shippingController.calculate) 
+routes.post('/shipping-calculate', authCartMiddleware.cart ,shippingController.calculate);
